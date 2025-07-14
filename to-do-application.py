@@ -8,11 +8,10 @@ Enter your Choice
     """
 menu=input(dashboard)
 
-taskDictionary = {}
+taskList = []
 def addTask():
-    taskTitle= input("Enter your task title: ")
-    taskDescription= input("Enter task description: ")
-    taskDictionary = {k:v for (k,v) in zip(taskTitle, taskDescription)}
+    task= input("Enter your task ")
+    taskList.append(task)
     print("task successfully added ")
     nextMenuOption=input(dashboard)
     if(nextMenuOption=="1"):
@@ -33,7 +32,9 @@ def updateTask():
     print("from update task")
 
 def allTask():
-    print(taskDictionary)
+    print("====Here is all to-do task list====")
+    for i, task in enumerate(taskList, start=1):
+        print(f"{i}.{task}")
 
 if(menu=="1"):
     addTask()
